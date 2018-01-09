@@ -1,0 +1,95 @@
+<!-- FORMULÁRIO DE CADASTRO -->
+<section id="#d">
+  <div class="container-fluid">
+    <img src="/images/eSuy3MC.png" alt="Junte-se ao time" id="imagem_form">
+	</div>
+  <div class="container-fluid">
+  
+  <!-- <form> -->
+  <%= form_for @player do |f| %>
+
+  		<!-- dados do Player -->
+  		<div class="form-group row">
+    		<label class="col-sm-2 col-form-label">Nome</label>
+    		<div class="col-sm-10">
+    		 <input type="name" class="form-control" placeholder="Nome" name="player[nome]">
+   			</div>
+  		</div>
+  		<div class="form-group row">
+    		<label for="inputEmail3" class="col-sm-2 col-form-label">Email Institucional</label>
+    		<div class="col-sm-10">
+    	  		<input type="Email" class="form-control" id="inputEmail3" placeholder="exemplo@aluno.uece.br">
+    		</div>
+  		</div>
+		<div class="form-group row">
+    		<label for="nick" class="col-sm-2 col-form-label">Nick (L.o.L)</label>
+    		<div class="col-sm-10">
+    	  		<input type="name" class="form-control" id="nick" placeholder="Nick" name="player[nick]">
+    		</div>
+  		</div>
+  		<div class="form-group row">
+    		<label class="col-sm-2 col-form-label">Rank atual</label>
+    		<div class="col-sm-10">
+    		 	<input type="name" class="form-control" placeholder="Ranked" name="player[ranked]">
+   			</div>
+  		</div>
+  		<div class="form-group row">
+    		<label class="col-sm-2 col-form-label">Horários disponíveis para treino</label>
+    		<div class="col-sm-10">
+    		 <input type="name" class="form-control" placeholder="dia da semana/horário" name="player[horario]">
+   			</div>
+  		</div>
+
+  	<!-- radios -->
+  	<fieldset class="form-group">
+    	<div class="row">
+      	<legend class="col-form-legend col-sm-2">Posição</legend>
+      		<div class="col-sm-10">
+        		<div class="form-check">
+          			<label class="form-check-label">
+            			<input class="form-check-input" type="radio" name="player[posicao:"TOP"]" id="gridRadios1" value="TOP" checked>Top lane
+            		</label>
+        		</div>
+        		<div class="form-check">
+          			<label class="form-check-label">
+            			<input class="form-check-input" type="radio" name="player[posicao:"JG"]" id="gridRadios2" value="JG">Jungle
+            		</label>
+  				</div>
+  	 			<div class="form-check">
+          			<label class="form-check-label">
+            			<input class="form-check-input" type="radio" name="player[posicao:"MID"]" id="gridRadios3" value="MID">Mid Lane
+            		</label>
+  				</div>
+	      		<div class="form-check">
+          			<label class="form-check-label">
+            			<input class="form-check-input" type="radio" name="player[posicao:"SUP"]" id="gridRadios4" value="SUP">Suporte
+            		</label>
+  				</div>
+	        	<div class="form-check">
+          			<label class="form-check-label">
+            			<input class="form-check-input" type="radio" name="player[posicao:"ADC"]" id="gridRadios5" value="ADC">AD Carry
+            		</label>
+  				</div>	
+	      	</div>
+	    </div>
+	</fieldset>
+		
+
+	<div class="form-group row">
+	    <div class="col-sm-10">
+	      <div class="form-check">
+	        <label class="form-check-label">
+	          <input class="form-check-input" type="checkbox"> Receber e-mails informativos. 
+	      </label>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="form-group row">
+	    <div class="col-sm-10">
+	      <button type="submit" class="btn btn-dark">Cadastrar</button>
+	    </div>
+	  </div>
+   <% end %>
+	<!-- </form> -->
+  </div>
+</section>

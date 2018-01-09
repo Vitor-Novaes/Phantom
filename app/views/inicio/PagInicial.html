@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Phantom Black </title>
+</head>
+<body>
+	<h1>Phantom Black e-Sports </h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Nick</th>
+				<th>Posição</th>
+				<th>Ranked</th>
+				<th>Horário disponivel</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<% player.all %>
+				<% player.all do |player| %>
+				<td><% player.nome %></td>
+				<td><% player.nick %></td>
+				<td><% player.posicao %></td>
+				<td><% player.ranked %></td>
+				<td><% player.horario %></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

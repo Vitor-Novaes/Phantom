@@ -1,0 +1,18 @@
+<div class="scaffold">
+	<div class="container-fluid">
+		<p id="alert_erro" class="alert alert-dark" role="alert""><%= notice %></p>
+
+		<p>
+		  <strong>Dia:</strong>
+		  <%= @treinamento.dia %>
+		</p>
+
+		<p>
+		  <strong>Horario:</strong>
+		  <%= @treinamento.horario %>
+		</p>
+
+		<%= link_to 'Edit', edit_treinamento_path(@treinamento), class: "btn btn-dark" %> 
+		<%= link_to 'Back', treinamentos_path , class: "btn btn-dark"%>
+	</div>
+</div>

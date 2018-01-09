@@ -1,0 +1,164 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *= require_bootstrap
+ *= require_tree .
+ *= require_self
+ */
+@charset "UTF-8";
+
+	/*GERAL STYLE*/
+	body{
+		background-image: url("/images/back.jpg");
+		background-repeat: repeat-y;
+		background-attachment: fixed;
+		background-position: center;
+		position: relative;
+	}
+	div.container-fluid{
+   		background-color: rgba(0,0,0,0.7);
+   		/*position: relative;*/
+	}
+
+	#logo{
+		position: relative;
+		width: 300px;
+		height: 300px;
+	}
+
+	.footer{
+		margin-bottom: 30px;
+	}
+
+	#footer1{
+		color: white;
+		position: relative;
+	}
+
+	#link_to_acens{
+		text-decoration: none;
+		color: rgb(65,105,225);
+	}
+	#link_to_acens:hover{
+		color: rgb(65,105,225);
+		background-color: transparent;
+		text-decoration: underline;
+	}
+
+
+	/*Mensagem Inicial*/
+	div.jumbotron{
+		background-color: rgba(0,0,0,0.7);
+	}
+
+	.container{
+		color: white;
+	}
+
+	.jumbo{
+		color: white;
+	}
+
+	/*TREINOS*/
+	#tabela_treino{
+		margin-right: 50px;
+		margin-left: 50px;
+		opacity: 0.8;
+
+	}
+
+
+	/*Tabela de players*/
+	#tituloP{
+		color:white;
+	}
+
+	#tabela_player{
+		margin-right: 50px;
+		margin-left: 50px;
+		opacity: 0.8;
+	}
+
+	/*#cadastro_tabela{
+		position: relative;
+		left: 84.5%;
+		box-shadow: 2px 2px 2px rgba(192,192,192,0.2) ;
+	}*/
+
+
+	/*FORMULÁRIO*/
+	#imagem_form{
+		position: relative;
+		margin-left: 100px;
+		margin-right: 600px;
+	}
+
+	.form-group{
+		padding: 5px;
+		position: relative;
+		margin-right: 700px;
+		top :-200px;
+		left: 660px;
+	}
+
+	.col-sm-2{
+		color: white;
+	}
+
+	.form-check-label{
+		color :white;
+	}
+
+	/*Cadastro : players/new*/
+	#Cadastro_title{
+		color: white;
+		position: relative;
+		margin-left: 700px;
+		top:70px;
+		text-shadow: 4px 4px 4px rgb(0,0,0);
+	}
+		/*Alertas*/
+		#alert_erro{
+			margin-left: 700px;
+		}
+
+		#alerta_success{
+			position: relative;
+			margin-left: 700px;
+		}
+
+
+	/*Mensagem de Cadastrado*/
+	#cadastrado{
+		padding: 20px;
+		position: relative;
+		color: white;
+		text-align: center;
+	}
+
+	#player_cadastrado{
+		height: 70px;
+	    width: 100%;
+	    margin-top: 30px;
+	    margin-bottom: 30px;
+	    padding: 50px;
+	    background-color: rgba(0,0,0,0.7);
+	    /*border-radius: 0px 0px 10px 10px;*/
+	    position: fixed;
+	    /*z-index: 1;*/
+	}
+
+
+	/*TREINAMENTOS CSS*/
+	.scaffold{
+		color: rgb(220,220,220);
+
+	}

@@ -1,0 +1,10 @@
+<tr>
+  	<th id="playerJS" scope="row">&gt;</th>
+  	<td id="nomeP"><%= player.nome %></td>
+    <td id="nickP"><%= player.nick %></td>
+  	<td id="posicaoP"><%= player.posicao %></td>
+  	<td id="rankedP"><%= player.ranked %></td>
+  	<td id="horarioP"><%= player.treinamento.dia %></td>
+    <td><%= button_to "remover" , player , method: :delete, class: "btn btn-danger", data: {confirm: "Confirmar ação delete do player : #{player.nome} - #{player.nick} ?"} %></td>
+    <td><%= link_to "editar" , edit_player_path(player) , class: "btn btn-primary" %></td>
+</tr>

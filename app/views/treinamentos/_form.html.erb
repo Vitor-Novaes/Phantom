@@ -1,0 +1,31 @@
+<div class="scaffold">
+
+<%= form_with(model: treinamento, local: true) do |form| %>
+
+  <% if treinamento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(treinamento.errors.count, "error") %>  - Não foi possível salvar Treino pelos seguintes motivos :</h2>
+
+      <ul>
+      <% treinamento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :dia , class: "col-sm-2 col-form-label" %>
+    <%= form.text_field :dia, id: :treinamento_dia , class: "form-treino" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :horario , class: "col-sm-2 col-form-label"%>
+    <%= form.text_field :horario, id: :treinamento_horario , class: "form-treino" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>

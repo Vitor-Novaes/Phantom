@@ -1,0 +1,153 @@
+
+<!-- FORMULÁRIO DE CADASTRO -->
+
+<div class="container-fluid">
+<section id="#d">
+
+    <!-- mensagem de erro -->
+    <% @player.errors.full_messages.each do |message| %>
+        <div id="alert_erro" class="alert alert-dark" role="alert">
+            <%= message %>
+        </div>
+    <% end %>
+
+    <h1 id="Cadastro_title">Faça parte do Time</h1>
+    <h6 id="Cadastro_title"> * campo obrigatório</h6>
+    <img src="/images/eSuy3MC.png" alt="Junte-se ao time" id="imagem_form">
+
+    <!-- Formulário -->
+    <%= form_for @player do |f| %>
+
+  		<!-- dados do Player -->
+  		<div class="form-group row-center">
+    		<label class="col-sm-2 col-form-label">Nome *</label>
+    		  <div class="col-sm-10">
+    		    <!-- <input type="name" class="form-control" placeholder="Nome" name="player[nome]"> -->
+   			    <%= f.text_field :nome, class: "form-control", placeholder:"Nome e Sobrenome" %>
+          </div>
+  		</div>
+
+      <div class="form-group row-center">
+    	<label for="inputEmail3" class="col-sm-2 col-form-label">Email Institucional *</label>
+    		  <div class="col-sm-10">
+    	  		<%= f.text_field :email_id , class: "form-control" , placeholder: "exemplo@aluno.uece.br"%>
+    		  </div>
+  		</div>
+
+    <div class="form-group row-center">
+    	<label for="nick" class="col-sm-2 col-form-label">Nick *</label>
+    		<div class="col-sm-10">
+    	  		<!-- <input type="name" class="form-control" id="nick" placeholder="Nick" name="player[nick]"> -->
+    		    <%= f.text_field :nick, class: "form-control" , placeholder: "Nick in-game"%>
+            </div>
+  		</div>
+
+      <fieldset class="form-group">
+        <div class="row">
+            <legend class="col-form-legend col-sm-2">Ranked</legend>
+            <div class="col-sm-4">
+                <div class="form-check">
+            		<!-- <input type="name" class="form-control" placeholder="Ranked" name="player[ranked]"> -->
+           	        <%= f.radio_button :ranked, 'Bronze', :checked => true, class: "form-check-input"%>
+                    <%= f.label 'Bronze' , class: "form-check-label"%><br/>
+
+                    <%= f.radio_button :ranked, 'Prata', class: "form-check-input"%>
+                    <%= f.label 'Prata' , class: "form-check-label"%><br/>
+
+                    <%= f.radio_button :ranked, 'Ouro', class: "form-check-input"%>
+                    <%= f.label 'Ouro' , class: "form-check-label"%><br/>
+
+                    <%= f.radio_button :ranked, 'Platina',class: "form-check-input"%>
+                    <%= f.label 'Platina' , class: "form-check-label"%><br/>
+
+                    <%= f.radio_button :ranked, 'Diamante ou +', class: "form-check-input"%>
+                    <%= f.label 'Diamante ou Superior' , class: "form-check-label"%><br/>
+
+                </div>
+  		    </div>
+        </div>
+      </fieldset>
+
+
+      <div class="form-group row-center">
+        <%= f.label :treinamento , class: "col-sm-2 col-form-label" %>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <%= @treinos.each do |treinamento| %>
+              <%= f.radio_button :treinamento_id , @treinos , class: "form-check-input"%>
+              <%= f.label :treinamento , treinamento.dia , class: " form-check-label" %><br/>
+            <%end%>
+          </div>
+
+
+            <%= f.collection_select :treinamento_id , @treinos, :id, :dia , {} ,
+            class: "form-control" %>
+        </div>
+      </div>
+
+  	<!-- radios -->
+  	<fieldset class="form-group">
+    	<div class="row">
+      	<legend class="col-form-legend col-sm-2">Posição</legend>
+      		<div class="col-sm-10">
+        		<div class="form-check">
+
+                    <%= f.radio_button :posicao, 'TOP', :checked => true, class: "form-check-input"%>
+                    <%= f.label 'Top lane' , class: "form-check-label"%>
+
+                  <!-- <input class="form-check-input" type="radio"
+                  name="player[posicao:"TOP"]" id="gridRadios1" value="TOP" checked>Top lane -->
+
+        		</div>
+        		<div class="form-check">
+
+            		<%= f.radio_button :posicao, 'JG', class: "form-check-input" %>
+                    <%= f.label 'Jungle', class: "form-check-label"%>
+                  <!-- <input class="form-check-input" type="radio" name="player[posicao:"JG"]" id="gridRadios2" value="JG">Jungle -->
+
+  				</div>
+  	 			<div class="form-check">
+
+                    <%= f.radio_button :posicao, 'MID', class: "form-check-input" %>
+                    <%= f.label 'Mid Lane', class: "form-check-label"%>
+            			<!-- <input class="form-check-input" type="radio" name="player[posicao:"MID"]" id="gridRadios3" value="MID">Mid Lane -->
+
+  				</div>
+	      		<div class="form-check">
+
+          		    <%= f.radio_button :posicao, 'SUP', class: "form-check-input" %>
+                    <%= f.label 'Suporte', class: "form-check-label"%>
+            			<!-- <input class="form-check-input" type="radio" name="player[posicao:"SUP"]" id="gridRadios4" value="SUP">Suporte -->
+
+  				</div>
+	        	<div class="form-check">
+
+          			<%= f.radio_button :posicao, 'ADC', class: "form-check-input" %>
+                <%= f.label 'AD Carry', class: "form-check-label"%>
+            			<!-- <input class="form-check-input" type="radio" name="player[posicao:"ADC"]" id="gridRadios5" value="ADC">AD Carry -->
+
+  				</div>
+	      	</div>
+	    </div>
+	</fieldset>
+
+
+	<div class="form-group">
+	    <div class="col-sm-4">
+	      <div class="form-check">
+	        <label class="form-check-label">
+	          <input class="form-check-input" type="checkbox"> Receber e-mails informativos.
+	      </label>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="form-group row-right">
+	    <div class="col-sm-4">
+	      <!-- <button type="submit" class="btn btn-dark">Cadastrar</button> -->
+	     <%= f.submit text_action , class: "btn btn-dark" %>
+      </div>
+	  </div>
+   <% end %>
+
+</section>
+</div>
